@@ -1,6 +1,7 @@
 {
-  "stylesheet": ["resume.css"],
+  "dest": "Leonardo-Mello-Resume.pdf",
   "document_title": "Leonardo Mello – Resume",
+  "stylesheet": ["resume.css"],
   "pdf_options": {
     "format": "A4",
     "margin": { "top": "14mm", "right": "16mm", "bottom": "14mm", "left": "16mm" },
