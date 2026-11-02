@@ -1,6 +1,7 @@
 ### Leonardo Mello
 
 I am a:
-- 🧑🏽‍💻 **Fullstack Software Engineer**.
-- 📍 Working remotely from **São Paulo, Brazil**.  
-- 📫 Reach me on discord: [LeoMello#7204](https://discord.com/users/LeoMello#7204).
+- 🧑🏽‍💻 **Senior Software Engineer**: backend services and data applications.
+- 📍 Working remotely from **São Paulo, Brazil**.
+- 📄 Resume: [Leonardo-Mello-Resume.pdf](Leonardo-Mello-Resume.pdf)
+- 💼 Reach me on [LinkedIn](https://www.linkedin.com/in/lsvmello).

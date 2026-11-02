@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, "Liberation Sans", sans-serif;
+  font-size: 10pt;
+  line-height: 1.45;
+  color: #1f2328;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 22pt;
+  font-weight: 700;
+  margin: 0 0 3pt;
+  padding: 8pt 0 0;
+  border: none;
+  border-top: 3px solid #0b5394;
+}
+
+h2 {
+  font-size: 11pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0b5394;
+  margin: 16pt 0 6pt;
+  padding: 0;
+  border: none;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 28pt;
+  margin-top: 3pt;
+  border-bottom: 2px solid #0b5394;
+}
+
+h3 {
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 10pt 0 1pt;
+}
+
+em {
+  font-style: normal;
+  color: #59636e;
+}
+
+p,
+ul {
+  margin: 0 0 5pt;
+}
+
+li + li {
+  margin-top: 2pt;
+}
+
+a {
+  color: #0b5394;
+  text-decoration: none;
+}
+
+h2,
+h3 {
+  break-after: avoid;
+}
+
+li {
+  break-inside: avoid;
+}
+
+.page-break {
+  break-before: page;
+}
+
+.page-break + h2 {
+  margin-top: 0;
+}

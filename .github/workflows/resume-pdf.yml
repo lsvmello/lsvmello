@@ -1,0 +1,49 @@
+name: Build resume PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - RESUME.md
+      - resume.css
+      - .md-to-pdf.json
+      - .github/workflows/resume-pdf.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: resume-pdf
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate Leonardo-Mello-Resume.pdf
+        env:
+          # Use the Chrome preinstalled on the runner instead of downloading one.
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
+        run: |
+          npx --yes md-to-pdf@5.2.5 --config-file .md-to-pdf.json RESUME.md
+          mv RESUME.pdf Leonardo-Mello-Resume.pdf
+
+      - name: Commit Leonardo-Mello-Resume.pdf
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Leonardo-Mello-Resume.pdf
+          if git diff --cached --quiet; then
+            echo "Leonardo-Mello-Resume.pdf unchanged"
+          else
+            git commit -m "Build Leonardo-Mello-Resume.pdf"
+            git push
+          fi
