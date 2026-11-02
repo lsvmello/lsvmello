@@ -13,7 +13,7 @@ Experienced across Java/Spring Boot and .NET services, event-driven integrations
 ### Avenue Code: Senior Software Engineer
 *July 2022 – Present · São Paulo, Brazil*
 
-Consultant on the merchandise planning and re-forecasting platform of a major North American apparel retailer, used daily by hundreds of planners. Cross-stack scope: planning services, calculation engine, integrations, analytics and engineering automation.
+Consultant for Gap Inc. on its merchandise planning and re-forecasting platform, used daily by hundreds of planners. Cross-stack scope: planning services, calculation engine, integrations, analytics and engineering automation.
 
 - Designed, built and published a Power BI planning report on Databricks: source-to-target mapping, dimensional model, SQL, and Python tooling that generates and validates the report project (PBIP/TMDL).
 - Extended Java 21 / Spring Boot 3 planning microservices: REST APIs on MongoDB and SQL Server, and a Kafka/RabbitMQ event-ingestion gateway.
