@@ -5,8 +5,10 @@ on:
     branches: [main]
     paths:
       - RESUME.md
+      - RESUME.pt-BR.md
       - resume.css
       - .md-to-pdf.json
+      - .md-to-pdf.pt-br.json
       - .github/workflows/resume-pdf.yml
   workflow_dispatch:
 
@@ -27,17 +29,19 @@ jobs:
         with:
           node-version: 26
 
-      - name: Generate PDF resume
+      - name: Generate PDF resumes
         env:
           # Use the Chrome preinstalled on the runner instead of downloading one.
           PUPPETEER_SKIP_DOWNLOAD: "true"
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
-        run: npx --yes md-to-pdf@5.2.5 --config-file .md-to-pdf.json RESUME.md
+        run: |
+          npx --yes md-to-pdf@5.2.5 --config-file .md-to-pdf.json RESUME.md
+          npx --yes md-to-pdf@5.2.5 --config-file .md-to-pdf.pt-br.json RESUME.pt-BR.md
 
-      - name: Commit PDF resume
+      - name: Commit PDF resumes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Leonardo-Mello-Resume.pdf
-          git commit -m "Build Leonardo-Mello-Resume.pdf"
+          git add Leonardo-Mello-Resume.pdf Leonardo-Mello-Curriculo.pdf
+          git commit -m "Build resume PDFs"
           git push

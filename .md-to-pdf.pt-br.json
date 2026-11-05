@@ -1,0 +1,13 @@
+{
+  "dest": "Leonardo-Mello-Curriculo.pdf",
+  "document_title": "Leonardo Mello – Currículo",
+  "stylesheet": ["resume.css"],
+  "pdf_options": {
+    "format": "A4",
+    "margin": { "top": "14mm", "right": "16mm", "bottom": "14mm", "left": "16mm" },
+    "printBackground": true
+  },
+  "launch_options": {
+    "args": ["--no-sandbox"]
+  }
+}
